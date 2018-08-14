@@ -1,0 +1,11 @@
+@import "abstracts/_mixins.scss";
+
+.header-container {
+    padding: 10px 140px 20px;
+    @include lg {
+        padding: 10px 60px 20px;
+    };
+    @include sm {
+        padding: 10px 20px 20px;
+    };
+}

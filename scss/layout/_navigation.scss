@@ -1,0 +1,100 @@
+@import "abstracts/_mixins.scss";
+
+.nav-container {
+    margin: 0 auto;
+    background: white;
+    display: flex;
+    flex-direction: row;
+
+    .navbar-brand {
+        font-size: 36px;
+        color: inherit;
+        font-family: $font-condensed;
+        font-weight: bold;
+
+        &:hover {
+            color: $primary-color;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+
+            .logo {
+                padding: 0 5px 0 0;
+            }
+        }
+    }
+
+    .navbar-nav {
+        position: absolute;
+        top: 15px;
+        right: 120px;
+        flex-direction: row;
+        align-items: center;
+
+        .nav-item {
+            font-size: $font-size-small;
+            color: inherit;
+            margin-right: 60px;
+            font-family: $font-stack;
+            font-weight: bold;
+
+            &:hover {
+                color: $primary-color;
+            }
+        }
+    }
+
+    .collapsing {
+        -webkit-transition: none;
+        transition: none;
+        display: none;
+    }
+
+    .navbar-toggler {
+        border: none;
+
+        .navbar-toggler-icon {
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+    .btn {
+        background-color: $primary-color;
+        padding: 0 25px;
+        color: white;
+        border-radius: 26px;
+        font-size: $font-size-small;
+        line-height: 50px;
+    }
+
+    button:focus {
+        outline: none;
+    }
+    @include xl {
+        .collapsing {
+            display: block;
+        }
+
+        .navbar-nav {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            list-style: none;
+            right: 0;
+
+            .nav-item {
+                margin-bottom: 15px;
+                margin-right: 0;
+            }
+
+            .btn {
+                margin-top: 15px;
+                margin-bottom: 20px;
+            }
+        }
+    };
+}

@@ -1,0 +1,322 @@
+@import "abstracts/_mixins.scss"; // 'main' of Home page is devided into sections as per design. Media queries are added for each section separately to improve code readability.
+
+main {
+    .intro-search-container {
+        background-image: linear-gradient(rgba(55, 55, 55, 0.7)), url("../assets/img/background.png");
+        background-color: $secondary-color;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+
+        h2 {
+            width: 80%;
+            color: white;
+            margin: 100px 0;
+            text-align: center;
+        }
+        @include lg {
+            h2 {
+                width: 100%;
+            }
+        };
+        @include md {
+            h2 {
+                margin: 30px 0 100px;
+            }
+        };
+    }
+
+    .benefits-container {
+        & > p {
+            width: 70%;
+            text-align: center;
+        }
+
+        .benefits-listing {
+            margin-top: 100px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+        }
+
+        .benefit-description {
+            text-align: center;
+            width: 23%;
+
+            h4 {
+                color: $primary-color;
+            }
+
+            h4,
+            img {
+                margin-bottom: 20px;
+            }
+        }
+        @include lg {
+            .benefits-listing {
+                flex-wrap: wrap;
+                justify-content: space-around;
+
+                .benefit-description {
+                    width: 45%;
+                }
+            }
+        };
+        @include md {
+            p {
+                width: 100%;
+            }
+
+            .benefits-listing {
+                .benefit-description {
+                    width: 90%;
+                }
+            }
+        };
+        @include sm {
+            text-align: center;
+
+            .benefits-listing {
+                .benefit-description {
+                    width: 100%;
+                }
+            }
+        };
+    }
+
+    .values-container {
+        flex-direction: row;
+        justify-content: space-between;
+
+        .values-description-container {
+            width: 50%;
+            z-index: 999;
+
+            p {
+                width: 80%;
+                margin-bottom: 30px;
+            }
+        }
+
+        .smile-img-container {
+            width: 50%;
+
+            img {
+                max-width: 120%;
+            }
+        }
+        @include xl {
+            .values-description-container {
+                width: 60%;
+
+                h2 {
+                    font-size: 36px;
+                }
+
+                p {
+                    width: 100%;
+                }
+            }
+        };
+        @include lg {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            .values-description-container {
+                width: 70%;
+            }
+
+            .smile-img-container {
+                width: 70%;
+
+                img {
+                    max-width: 100%;
+                }
+            }
+        };
+        @include sm {
+            .values-description-container {
+                width: 100%;
+            }
+
+            .smile-img-container {
+                width: 100%;
+            }
+        };
+    }
+
+    .feedback-container {
+        background-color: #f8f8f8;
+
+        h2 {
+            margin-bottom: 140px;
+        }
+
+        .feedback-cards-container {
+            display: flex;
+            justify-content: space-between;
+
+            .card-container {
+                width: 31%;
+            }
+
+            .under-card-text {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+        @include lg {
+            h2 {
+                margin-bottom: 0;
+            }
+
+            .feedback-cards-container {
+                flex-direction: column;
+                align-items: center;
+
+                .card-container {
+                    width: 70%;
+                    margin-top: 100px;
+                }
+            }
+        };
+        @include sm {
+            text-align: center;
+
+            .feedback-cards-container {
+                .card-container {
+                    width: 100%;
+                    margin-top: 100px;
+                }
+            }
+        };
+    }
+
+    .team-container {
+        position: relative;
+        text-align: center;
+        padding: 120px;
+        background-color: $primary-color;
+
+        h2 {
+            margin-bottom: 100px;
+            color: white;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: -60px;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: url("../assets/img/background-curve.png") no-repeat bottom center;
+            background-size: 110%;
+        }
+        @include xl {
+            padding: 100px 120px;
+
+            &::before {
+                bottom: -40px;
+            }
+        }
+        @include lg {
+            padding: 60px 80px;
+        }
+        @include md {
+            padding: 60px;
+
+            &::before {
+                bottom: -20px;
+            }
+        };
+        @include sm {
+            padding: 60px 30px;
+
+            h2 {
+                margin-bottom: 30px;
+            }
+        };
+    }
+
+    .blog-container {
+        margin-top: 30px;
+        text-align: center;
+
+        h2 {
+            margin-bottom: 100px;
+        }
+
+        .blog-article-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            article {
+                line-height: 31px;
+                text-align: left;
+                width: 30%;
+
+                .article-date-container {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: baseline;
+                    width: 80%;
+                    color: $primary-color;
+
+                    & > * {
+                        margin-right: 5px;
+                        align-items: flex-start;
+                    }
+                }
+
+                a {
+                    text-decoration: none;
+                    font-weight: bold;
+                    color: $secondary-color;
+
+                    &:hover {
+                        color: $primary-color;
+                    }
+                }
+
+                i {
+                    font-size: 16px;
+                    vertical-align: text-bottom;
+                }
+            }
+        }
+        @include xl {
+            .article-date-container {
+                flex-direction: column;
+            }
+        };
+        @include lg {
+            h2 {
+                margin-bottom: 60px;
+            }
+
+            .blog-article-container {
+                flex-direction: column;
+
+                article {
+                    width: 70%;
+                    margin-bottom: 30px;
+
+                    .article-date-container {
+                        flex-direction: row;
+                        justify-content: flex-start;
+                    }
+                }
+            }
+        };
+        @include md {
+            .blog-article-container {
+                article {
+                    width: 90%;
+                }
+            }
+        };
+    }
+}

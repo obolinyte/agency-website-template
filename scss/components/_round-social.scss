@@ -1,0 +1,36 @@
+.socials-container {
+    margin-top: 210px;
+
+    .round-social-container {
+        display: inline-block;
+        border: 3px solid $primary-color;
+        border-radius: 50%;
+        width: 65px;
+        height: 65px;
+        text-align: center;
+        margin-right: 10px;
+
+        img {
+            margin-top: 9px;
+        }
+
+        .facebook {
+            width: 25px;
+            height: 40px;
+        }
+
+        .twitter {
+            width: 40px;
+            height: 40px;
+        }
+
+        .linkedin {
+            width: 35px;
+            height: 35px;
+        }
+
+        &:hover {
+            box-shadow: 4px 9px 10px 0 rgba(39, 50, 50, 0.9);
+        }
+    }
+}
